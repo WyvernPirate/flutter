@@ -69,6 +69,7 @@ final Set<String> skippedPaths = <String>{
   r'flutter/third_party/dart/sdk/lib/html/dart2js', // generated from other sources
   r'flutter/third_party/dart/sdk/lib/html/doc',
   r'flutter/third_party/dart/sdk/lib/svg/dart2js', // generated from other sources
+  r'flutter/third_party/dart/sdk/lib/web_gl/dart2js/web_gl_dart2js.dart', // generated from other sources
   r'flutter/third_party/dart/third_party/binary_size', // not linked in
   r'flutter/third_party/dart/third_party/binaryen', // not linked in
   r'flutter/third_party/dart/third_party/d3', // Siva says "that is the charting library used by the binary size tool"
@@ -101,6 +102,11 @@ final Set<String> skippedPaths = <String>{
   r'flutter/third_party/google_fonts_for_unit_tests', // only used in web unit tests
   r'flutter/third_party/gradle',
   r'flutter/third_party/harfbuzz/docs',
+  r'flutter/third_party/harfbuzz/perf',
+  r'flutter/third_party/harfbuzz/src/hb-bit-vector.hh',
+  r'flutter/third_party/harfbuzz/src/hb-directwrite.hh',
+  r'flutter/third_party/harfbuzz/src/hb-directwrite-shape.cc',
+  r'flutter/third_party/harfbuzz/src/hb-fontations.h',
   r'flutter/third_party/harfbuzz/util', // utils are command line tools that do not end up in the binary
   r'flutter/third_party/icu/filters',
   r'flutter/third_party/icu/fuzzers',

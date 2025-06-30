@@ -291,7 +291,7 @@ void main() {
               'An invisible SemanticsNode is one whose rect is not on screen hence not reachable for users, and its semantic information is not merged into a visible parent.\n'
               'An invisible SemanticsNode makes the accessibility experience confusing, as it does not provide any visual indication when the user selects it via accessibility technologies.\n'
               'Consider removing the above invisible SemanticsNodes if they were added by your RenderObject.assembleSemanticsNode implementation, or filing a bug on GitHub:\n'
-              '  https://github.com/flutter/flutter/issues/new?template=2_bug.yml',
+              '  https://github.com/flutter/flutter/issues/new?template=02_bug.yml',
             ),
           ),
         ),
@@ -322,7 +322,7 @@ void main() {
               'An invisible SemanticsNode is one whose rect is not on screen hence not reachable for users, and its semantic information is not merged into a visible parent.\n'
               'An invisible SemanticsNode makes the accessibility experience confusing, as it does not provide any visual indication when the user selects it via accessibility technologies.\n'
               'Consider removing the above invisible SemanticsNodes if they were added by your RenderObject.assembleSemanticsNode implementation, or filing a bug on GitHub:\n'
-              '  https://github.com/flutter/flutter/issues/new?template=2_bug.yml',
+              '  https://github.com/flutter/flutter/issues/new?template=02_bug.yml',
             ),
           ),
         ),
@@ -916,6 +916,26 @@ void main() {
     newNode.attach(owner);
     // Id is reused.
     expect(newNode.id, expectId);
+  });
+
+  test('performActionAt can hit test on merged semantics node', () {
+    bool tapped = false;
+    final SemanticsOwner owner = SemanticsOwner(onSemanticsUpdate: (SemanticsUpdate update) {});
+    final SemanticsNode root = SemanticsNode.root(owner: owner)
+      ..rect = const Rect.fromLTRB(0.0, 0.0, 10.0, 10.0);
+    final SemanticsNode merged = SemanticsNode()..rect = const Rect.fromLTRB(0.0, 0.0, 10.0, 10.0);
+    final SemanticsConfiguration mergeConfig =
+        SemanticsConfiguration()
+          ..isSemanticBoundary = true
+          ..isMergingSemanticsOfDescendants = true
+          ..onTap = () => tapped = true;
+    final SemanticsConfiguration rootConfig = SemanticsConfiguration()..isSemanticBoundary = true;
+
+    merged.updateWith(config: mergeConfig, childrenInInversePaintOrder: <SemanticsNode>[]);
+    root.updateWith(config: rootConfig, childrenInInversePaintOrder: <SemanticsNode>[merged]);
+
+    owner.performActionAt(const Offset(5, 5), SemanticsAction.tap);
+    expect(tapped, isTrue);
   });
 
   test('Tags show up in debug properties', () {

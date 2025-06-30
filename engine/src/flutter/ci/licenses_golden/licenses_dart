@@ -1,4 +1,4 @@
-Signature: fb0a650920d0bbc0c45c241328fe3ae6
+Signature: f4f0a7ce457a816a7b8e0f13355125f4
 
 ====================================================================================================
 LIBRARY: dart
@@ -842,7 +842,6 @@ ORIGIN: ../../../flutter/third_party/dart/sdk/lib/isolate/isolate.dart + ../../.
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/math/math.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/math/random.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/web_audio/dart2js/web_audio_dart2js.dart + ../../../flutter/third_party/dart/LICENSE
-ORIGIN: ../../../flutter/third_party/dart/sdk/lib/web_gl/dart2js/web_gl_dart2js.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/web_sql/dart2js/web_sql_dart2js.dart + ../../../flutter/third_party/dart/LICENSE
 TYPE: LicenseType.bsd
 FILE: ../../../flutter/third_party/dart/runtime/bin/builtin.cc
@@ -1191,7 +1190,6 @@ FILE: ../../../flutter/third_party/dart/sdk/lib/isolate/isolate.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/math/math.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/math/random.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/web_audio/dart2js/web_audio_dart2js.dart
-FILE: ../../../flutter/third_party/dart/sdk/lib/web_gl/dart2js/web_gl_dart2js.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/web_sql/dart2js/web_sql_dart2js.dart
 ----------------------------------------------------------------------------------------------------
 Copyright (c) 2012, the Dart project authors.  Please see the AUTHORS file
@@ -1507,7 +1505,6 @@ ORIGIN: ../../../flutter/third_party/dart/sdk/lib/vmservice/message.dart + ../..
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/vmservice/message_router.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/vmservice/running_isolate.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/sdk/lib/vmservice/running_isolates.dart + ../../../flutter/third_party/dart/LICENSE
-ORIGIN: ../../../flutter/third_party/dart/sdk/lib/web_gl/dart2js/web_gl_dart2js.dart + ../../../flutter/third_party/dart/LICENSE
 ORIGIN: ../../../flutter/third_party/dart/utils/compiler/create_snapshot_entry.dart + ../../../flutter/third_party/dart/LICENSE
 TYPE: LicenseType.bsd
 FILE: ../../../flutter/third_party/dart/runtime/bin/eventhandler_win.cc
@@ -1792,7 +1789,6 @@ FILE: ../../../flutter/third_party/dart/sdk/lib/vmservice/message.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/vmservice/message_router.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/vmservice/running_isolate.dart
 FILE: ../../../flutter/third_party/dart/sdk/lib/vmservice/running_isolates.dart
-FILE: ../../../flutter/third_party/dart/sdk/lib/web_gl/dart2js/web_gl_dart2js.dart
 FILE: ../../../flutter/third_party/dart/utils/compiler/create_snapshot_entry.dart
 ----------------------------------------------------------------------------------------------------
 Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
@@ -4862,7 +4858,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
 
-You may obtain a copy of this library's Source Code Form from: https://dart.googlesource.com/sdk/+/4e1f02bc704f74e25a737e033bfd7d0da52ec447
+You may obtain a copy of this library's Source Code Form from: https://dart.googlesource.com/sdk/+/e7f2f0556e3e57acb60749467e54f9a44b2bfc76
 /third_party/fallback_root_certificates/
 
 ====================================================================================================

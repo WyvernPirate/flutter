@@ -123,16 +123,14 @@ void main() {
     await tester.tap(find.text('AC'));
     await tester.pump();
 
-    // When no background color is set, only the non-visible indicator Ink is expected.
-    expect(findDestinationInk('AC'), findsOne);
+    expect(findDestinationInk('AC'), findsNothing);
 
     // Destination with a custom background color.
     await tester.tap(find.byIcon(Icons.access_alarm));
     await tester.pump();
 
     // A Material is added with the custom color.
-    expect(findDestinationInk('Alarm'), findsNWidgets(2));
-    // The drawer destination Ink is the first one, the second is the indicator's one.
+    expect(findDestinationInk('Alarm'), findsOne);
     final BoxDecoration destinationDecoration =
         tester.firstWidget<Ink>(findDestinationInk('Alarm')).decoration! as BoxDecoration;
     expect(destinationDecoration.color, color);
@@ -328,6 +326,7 @@ void main() {
         textDirection: TextDirection.ltr,
         isFocusable: true,
         isSelected: true,
+        hasSelectedState: true,
         hasTapAction: true,
         hasFocusAction: true,
       ),
@@ -338,6 +337,7 @@ void main() {
         label: 'Alarm\nTab 2 of 2',
         textDirection: TextDirection.ltr,
         isFocusable: true,
+        hasSelectedState: true,
         hasTapAction: true,
         hasFocusAction: true,
       ),
@@ -351,6 +351,7 @@ void main() {
         label: 'AC\nTab 1 of 2',
         textDirection: TextDirection.ltr,
         isFocusable: true,
+        hasSelectedState: true,
         hasTapAction: true,
         hasFocusAction: true,
       ),
@@ -362,6 +363,7 @@ void main() {
         textDirection: TextDirection.ltr,
         isFocusable: true,
         isSelected: true,
+        hasSelectedState: true,
         hasTapAction: true,
         hasFocusAction: true,
       ),
@@ -507,8 +509,8 @@ InkWell? _getInkWell(WidgetTester tester) {
 
 ShapeDecoration? _getIndicatorDecoration(WidgetTester tester) {
   return tester
-          .firstWidget<Ink>(
-            find.descendant(of: find.byType(FadeTransition), matching: find.byType(Ink)),
+          .firstWidget<Container>(
+            find.descendant(of: find.byType(FadeTransition), matching: find.byType(Container)),
           )
           .decoration
       as ShapeDecoration?;
